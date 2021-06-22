@@ -1,0 +1,25 @@
+{
+  "name": "rescript-dayjs",
+  "version": "1.0.0",
+  "description": "dayjs bindings to rescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "re:build": "rescript",
+    "re:start": "rescript build -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudo97/rescript-dayjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudo97/rescript-dayjs/issues"
+  },
+  "homepage": "https://github.com/sudo97/rescript-dayjs#readme",
+  "dependencies": {
+    "dayjs": "^1.10.5",
+    "rescript": "^9.1.4"
+  }
+}
