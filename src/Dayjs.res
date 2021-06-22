@@ -29,10 +29,12 @@ type t
 type timeUnit = [
 	| #year
 	| #month
+	| #week
 	| #date
+	| #day
 	| #hour
 	| #minute
-	| #sedond
+	| #second
 	| #millisecond
 	| #D
 	| #d
@@ -49,8 +51,18 @@ type timeUnit = [
 @send external subtract: (t, int, timeUnit) => t = "subtract"
 @send external startOf: (t, timeUnit) => t = "startOf"
 @send external endOf: (t, timeUnit) => t = "endOf"
-@send external diffMs: (t, t) => float = "diff"
-
-let use = {
-	make()->set(#year, 6)->add(2000, #year)->subtract(9, #year)->endOf(#year)->toISO->Js.log
-}
+@send external diff: (t, t) => float = "diff"
+@send external diffOf: (t, t, timeUnit, bool) => float = "diff"
+@send external valueOf: t => float = "valueOf"
+@send external unix: t => float = "unix"
+@send external daysInMonth: t => int = "daysInMonth"
+@send external toDate: t => Js.Date.t = "toDate"
+@send external toJSON: t => string = "toJSON"
+@send external toISOString: t => string = "toISOString"
+@send external toString: t => string = "toString"
+@send external isBefore: (t, t) => bool = "isBefore"
+@send external isBeforeIn: (t, t, timeUnit) => bool = "isBefore"
+@send external isSame: (t, t) => bool = "isSame"
+@send external isSameIn: (t, t, timeUnit) => bool = "isSame"
+@send external isAfter: (t, t) => bool = "isAfter"
+@send external isAfterIn: (t, t, timeUnit) => bool = "isAfter"
